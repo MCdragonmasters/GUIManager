@@ -1,0 +1,13 @@
+name: TryhardPlugin
+version: @version@
+main: com.mcdragonmasters.tryhardplugin.TryhardPlugin
+api-version: '1.21'
+load: STARTUP
+authors: [MCdragonmasters]
+description: E
+dependencies:
+  server:
+    Vault:
+      load: BEFORE
+      required: true
+      join-classpath: true

@@ -1,0 +1,79 @@
+reloadDatapacks: false
+
+inventories:
+  main:
+    # optional
+    command: "help"
+    commandPermission: "perm"
+    #
+    rows: 3
+    title: "<gold>Help Menu"
+    items:
+      rev:
+        slot: 12
+        type: "TOTEM_OF_UNDYING"
+        name: "<gold>Revive info"
+        lore:
+          - "<red>line 1"
+          - "<rainbow>line 2"
+          - "etc....."
+        clickOpenInv: "revInv"
+      skip:
+        slot: 13
+        type: "ARROW"
+        name: "Skip info"
+        lore:
+          - "lore"
+        clickOpenInv: "skipInv"
+      misc:
+        slot: 14
+        type: "PAPER"
+        name: "Misc info"
+        lore:
+          - "lore"
+        clickOpenInv: "miscInv"
+      winner:
+        slot: 16
+        type: "GOLDEN_APPLE"
+        name: "<gold>Winner info"
+        lore: []
+        # both of these are optional
+        rankRequired: "winner"
+        clickOpenInv: "winnerInv"
+        #
+  revInv:
+    rows: 3
+    title: "<gold>Rev Info"
+    items:
+      item1:
+        slot: 12
+        type: "GOLD_INGOT"
+        name: "idk"
+        lore: []
+  skipInv:
+    rows: 3
+    title: "<gold>Skip Info"
+    items:
+      item1:
+        slot: 12
+        type: "GOLD_INGOT"
+        name: "idk"
+        lore: []
+  miscInv:
+    rows: 3
+    title: "<gold>Misc Info"
+    items:
+      item1:
+        slot: 12
+        type: "GOLD_INGOT"
+        name: "idk"
+        lore: []
+  winnerInv:
+    rows: 3
+    title: "<gold>Winner Info"
+    items:
+      item1:
+        slot: 12
+        type: "GOLD_INGOT"
+        name: "idk"
+        lore: []

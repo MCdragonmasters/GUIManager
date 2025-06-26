@@ -1,6 +1,6 @@
-name: TryhardPlugin
+name: GUIManager
 version: @version@
-main: com.mcdragonmasters.tryhardplugin.TryhardPlugin
+main: com.mcdragonmasters.guiManager.GUIManager
 api-version: '1.21'
 load: STARTUP
 authors: [MCdragonmasters]

@@ -30,7 +30,7 @@ dependencies {
 tasks {
     shadowJar {
         archiveClassifier.set(null as String?)
-        relocate("dev.jorel.commandapi", "com.mcdragonmasters.tryhardplugin.libs.commandapi")
+        relocate("dev.jorel.commandapi", "com.mcdragonmasters.guiManager.libs.commandapi")
     }
     build {
         dependsOn(shadowJar)

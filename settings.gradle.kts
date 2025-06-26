@@ -1,1 +1,1 @@
-rootProject.name = "TryhardPlugin"
+rootProject.name = "GUIManager"

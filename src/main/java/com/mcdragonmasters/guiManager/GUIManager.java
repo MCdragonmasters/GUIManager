@@ -1,6 +1,7 @@
-package com.mcdragonmasters.tryhardplugin;
+package com.mcdragonmasters.guiManager;
 
 import dev.jorel.commandapi.CommandAPI;
+import dev.jorel.commandapi.CommandAPIBukkit;
 import dev.jorel.commandapi.CommandAPIBukkitConfig;
 import dev.jorel.commandapi.CommandAPICommand;
 import io.papermc.paper.datacomponent.DataComponentTypes;
@@ -22,11 +23,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.logging.Logger;
 
 @SuppressWarnings("UnstableApiUsage")
-public class TryhardPlugin extends JavaPlugin {
+public class GUIManager extends JavaPlugin {
 
     public static FileConfiguration config;
     public static Logger LOGGER;
-    public static TryhardPlugin INSTANCE;
+    public static GUIManager INSTANCE;
     @Getter
     private static Chat vaultChat;
 
@@ -43,7 +44,7 @@ public class TryhardPlugin extends JavaPlugin {
     public void onEnable() {
         INSTANCE = this;
         LOGGER = getLogger();
-        reload();
+        Bukkit.getScheduler().runTask(this, GUIManager::reload);
         if (!setupVaultChat() ) {
             getLogger().severe("Disabled due to no Vault dependency found!");
             getServer().getPluginManager().disablePlugin(this);
@@ -71,9 +72,6 @@ public class TryhardPlugin extends JavaPlugin {
     }
 
     public static void reload() {
-        for (String command : CustomInventory.getCommandsList()) {
-            CommandAPI.unregister(command);
-        }
         CustomInventory.getCommandsList().clear();
         CustomInventory.getCustomInventories().clear();
         INSTANCE.saveDefaultConfig();
@@ -86,6 +84,10 @@ public class TryhardPlugin extends JavaPlugin {
             String command = getString(confPrefix+".command");
             if (command!=null) {
                 CustomInventory.getCommandsList().add(command);
+                for (String commandName : CustomInventory.getCommandsList()) {
+                    CommandAPIBukkit.unregister(commandName, false, false);
+                    CommandAPIBukkit.unregister(commandName, false, true);
+                }
                 String commandPerm = getString(confPrefix+".commandPermission");
                 CommandAPI.unregister(command);
                 var cmd = new CommandAPICommand(command)

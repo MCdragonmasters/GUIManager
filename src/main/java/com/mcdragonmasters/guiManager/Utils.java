@@ -1,4 +1,4 @@
-package com.mcdragonmasters.tryhardplugin;
+package com.mcdragonmasters.guiManager;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;

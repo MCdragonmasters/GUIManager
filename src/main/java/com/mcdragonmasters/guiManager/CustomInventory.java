@@ -1,4 +1,4 @@
-package com.mcdragonmasters.tryhardplugin;
+package com.mcdragonmasters.guiManager;
 
 import lombok.Getter;
 import net.kyori.adventure.text.Component;
@@ -18,7 +18,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-import static com.mcdragonmasters.tryhardplugin.TryhardPlugin.INSTANCE;
+import static com.mcdragonmasters.guiManager.GUIManager.INSTANCE;
 
 public class CustomInventory implements InventoryHolder {
     @Getter
@@ -48,7 +48,7 @@ public class CustomInventory implements InventoryHolder {
             if (stack==null) continue;
 
             var rankRequired = stack.getPersistentDataContainer().get(CustomInventory.getPdcRankRequiredKey(), PersistentDataType.STRING);
-            List<String> groups = Arrays.stream(TryhardPlugin.getVaultChat().getPlayerGroups((Player) humanEntity)).toList();
+            List<String> groups = Arrays.stream(GUIManager.getVaultChat().getPlayerGroups((Player) humanEntity)).toList();
             if (rankRequired!=null && !groups.contains(rankRequired)) {
                 inventory.setItem(i, new ItemStack(Material.AIR));
             }

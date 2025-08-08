@@ -1,10 +1,10 @@
 name: GUIManager
 version: @version@
 main: com.mcdragonmasters.guiManager.GUIManager
-api-version: '1.21'
+api-version: '1.21.8'
 load: STARTUP
 authors: [MCdragonmasters]
-description: E
+description: hi
 dependencies:
   server:
     Vault:

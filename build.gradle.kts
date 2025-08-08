@@ -9,6 +9,7 @@ plugins {
 
 group = "com.mcdragonmasters"
 version = "1.0.0"
+
 repositories {
     mavenCentral()
     mavenLocal()
@@ -16,14 +17,13 @@ repositories {
     maven("https://repo.papermc.io/repository/maven-public/")
     // ConfigUpdater
     maven("https://oss.sonatype.org/content/groups/public")
-    // PotatoEssentials
-    maven("https://jitpack.io")
 }
+
 dependencies {
     // Paper
-    compileOnly("io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:1.21.8-R0.1-SNAPSHOT")
     // CommandAPI
-    implementation("dev.jorel:commandapi-bukkit-shade-mojang-mapped:10.0.1")
+    implementation("dev.jorel:commandapi-bukkit-shade-mojang-mapped:10.1.2")
     // Vault
     compileOnly("com.github.MilkBowl:VaultAPI:1.7.1")
 }
@@ -39,7 +39,7 @@ tasks {
         // Configure the Minecraft version for our task.
         // This is the only required configuration besides applying the plugin.
         // Your plugin's jar (or shadowJar if present) will be used automatically.
-        minecraftVersion("1.21.4")
+        minecraftVersion("1.21.8")
     }
 }
 java {

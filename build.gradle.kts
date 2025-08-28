@@ -1,7 +1,6 @@
 import org.apache.tools.ant.filters.ReplaceTokens
 
 plugins {
-    java
     id("com.gradleup.shadow") version "8.3.3"
     id("io.freefair.lombok") version "8.12.1"
     id("xyz.jpenilla.run-paper") version "2.3.1"
@@ -17,6 +16,9 @@ repositories {
     maven("https://repo.papermc.io/repository/maven-public/")
     // ConfigUpdater
     maven("https://oss.sonatype.org/content/groups/public")
+    // Vault
+    maven("https://jitpack.io/")
+
 }
 
 dependencies {
